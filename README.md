@@ -7,6 +7,4 @@ Notes
 Todo
 -----
 - Add UART communication
-- Add the EAGLE circuit diagram to this repo
-- Add jladan's laser-cutting template to this repo
 - Add construction guide etc.
