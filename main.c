@@ -45,12 +45,12 @@ int main(void) {
   
   uint8_t prev_door = 0xFF;
   while (1) {
-    uint8_t door_sensor = !(PINC & 0b00000001);
+    uint8_t door_sensor = PINC & 0b00000001;
     if (door_sensor != prev_door) {
       prev_door = door_sensor;
       PORTB ^= LED;
       do_servo(SERVO_FRONT, door_sensor ? SERVO_OFF : SERVO_ON, 6000);
-      do_servo(SERVO_BACK, !door_sensor ? SERVO_OFF : SERVO_ON, 6000);
+      do_servo(SERVO_BACK, door_sensor ? SERVO_OFF : SERVO_ON, 6000);
       do_servo(SERVO_FRONT, SERVO_PARK, 3000);
       do_servo(SERVO_BACK, SERVO_PARK, 3000);
       delay_0point1ms(10000);
