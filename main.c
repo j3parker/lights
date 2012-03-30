@@ -49,10 +49,10 @@ int main(void) {
     if (door_sensor != prev_door) {
       prev_door = door_sensor;
       PORTB ^= LED;
-      do_servo(SERVO_FRONT, door_sensor ? SERVO_OFF : SERVO_ON, 6000);
-      do_servo(SERVO_BACK, door_sensor ? SERVO_OFF : SERVO_ON, 6000);
-      do_servo(SERVO_FRONT, SERVO_PARK, 3000);
-      do_servo(SERVO_BACK, SERVO_PARK, 3000);
+      do_servo(SERVO_FRONT, door_sensor ? SERVO_OFF : SERVO_ON, 12000);
+      do_servo(SERVO_BACK, door_sensor ? SERVO_OFF : SERVO_ON, 12000);
+      do_servo(SERVO_FRONT, SERVO_PARK, 6000);
+      do_servo(SERVO_BACK, SERVO_PARK, 6000);
       delay_0point1ms(10000);
       PORTB ^= LED;
     }
